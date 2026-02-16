@@ -14,7 +14,7 @@
 
 ## 4. MVP Feature Set
 ### A. Monster System
-*   **Total Monsters**: 50 unique monsters for MVP.
+*   **Total Monsters**: 20 unique monsters for MVP.
 *   **Ability Structure**:
     - **Auto-Attack**: Always active, fires based on speed/Gambits.
     - **Passive**: Always active, provides stat boosts or unique effects.
