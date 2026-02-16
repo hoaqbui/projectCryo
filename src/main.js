@@ -1,24 +1,36 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import './style.css';
+import { GameState, GameStates } from './core/GameState';
+import { ExplorationManager } from './exploration/ExplorationManager';
+import { BattleManager } from './battle/BattleManager';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+// Initialize Managers
+const exploration = new ExplorationManager('exploration-container');
+const battle = new BattleManager('battle-container');
 
-setupCounter(document.querySelector('#counter'))
+async function initGame() {
+  console.log("Initializing projectCryo Hybrid Engine...");
+
+  // Init PIXI.js (2D)
+  await exploration.init();
+
+  // Init Three.js (3D)
+  battle.init();
+
+  // Setup Toggle logic for prototyping
+  const toggleBtn = document.getElementById('btn-toggle-battle');
+  toggleBtn.addEventListener('click', () => {
+    const nextState = GameState.currentState === GameStates.EXPLORATION
+      ? GameStates.BATTLE
+      : GameStates.EXPLORATION;
+    GameState.transitionTo(nextState);
+  });
+
+  // Handle Resize
+  window.addEventListener('resize', () => {
+    battle.resize();
+  });
+
+  console.log("Game Initialized in Exploration State.");
+}
+
+initGame();
