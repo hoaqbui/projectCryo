@@ -16,6 +16,7 @@ To begin implementation, we recommend the following core Unity packages:
 ## 📂 Documentation
 - **[PRD.md](./PRD.md)**: Product Requirements and high-level vision.
 - **[TDD.md](./TDD.md)**: Technical architecture, ScriptableObject schemas, and tactical logic.
+- **[DesignStrategy.md](./DesignStrategy.md)**: Elemental charts and design philosophy.
 - **[Creature Roster](./creature_roster.md)**: Details of the 20 MVP creatures and their stats.
 
 ## 📜 Repository Structure
