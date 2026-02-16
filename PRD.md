@@ -19,12 +19,19 @@
 
 ## 4. MVP Feature Set
 ### A. Monster System
-*   **Logic Slots**: Monsters start with 2 Gambit slots, unlocking more as they level.
-*   **Speed Stat**: Directly influences ATB bar fill rate.
+*   **Total Monsters**: 50 unique monsters for MVP.
+*   **Ability Structure**:
+    - **Auto-Attack**: Always active, fires based on speed/Gambits.
+    - **Passive**: Always active, provides stat boosts or unique effects.
+    - **Manual Ultimate**: High-impact ability manual triggered by the player.
+*   **Equipment**: Each monster can equip exactly one item.
+*   **Logic Slots**: Monsters start with 2 Gambit slots, unlocking more via Gym progression.
 
 ### B. Battle System
 *   **3D Arena**: Separate 3D environments for each biome (Oasis, Wilds, Gyms).
 *   **Real-Time Combat**: 3v3 automated combat engine with dynamic camera angles (Star Ocean style).
+*   **Ultimate Controls**: Ultimates are mapped to a standard controller scheme:
+    - **X, Y, A, B** buttons trigger specific monster ultimates or shared tactical actions.
 *   **UI Overlay**: 
     - **Items Menu**: Quick access to healing and support items.
     - **Formation Control**: Change monster positioning during battle.
@@ -34,9 +41,11 @@
 
 ### C. World & Exploration
 *   **Aesthetic**: 2D top-down pixel art with seasonal variations and cozy vibes.
+*   **Dungeon System**: Grid-based rooms with interactive objects and triggers.
+*   **Healing Room**: A safe zone where monsters' HP is restored and players can manage their team.
 *   **Gym Leaders**: 8 unique tactical challenges acting as boss encounters.
-*   **Starting Location**: The Oasis (Home base).
-*   **Combat Route**: The Wilds (Random encounters in "tall grass").
+*   **Starting Location**: The Oasis (Healing Room base).
+*   **Combat Route**: The Wilds (Test Dungeon with random encounters).
 
 ## 5. Technical Stack (Proposed)
 *   **Engine/Framework**: Vite + Vanilla Javascript.
