@@ -12,6 +12,8 @@ The project follows a **Component-Based Architecture (ECS-Lite pattern)** using 
 
 ### 2.1 Core Modules
 - **World Engine**: Based on **The Farming Engine**, handling grid interactions, time, and world state.
+    - *Action RPG Elements*: Leverages TFE's built-in combat, HP/Energy attributes, and XP leveling system.
+    - *Follower/Pet System*: Utilizes TFE's pet behaviors (Follow, Attack, Dig) for the creature exploration phase.
 - **ATB Combat System**: A custom C# module that interfaces with the World Engine for battle transitions.
 - **Data Layers**: Leveraging **ScriptableObjects** for all creature and item definitions.
 
