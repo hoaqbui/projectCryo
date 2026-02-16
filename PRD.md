@@ -1,13 +1,10 @@
-# projectCryo (Mon-Tactics)
-
-## 1. Project Overview
-"projectCryo" is a creature-collection RPG featuring a **3v3 Active Tactical Battle System** inspired by the FF12 Gambit system, presented in a cozy **Stardew Valley-inspired pixel art style**. The goal is to provide a charming world to explore while offering deep tactical "programming" for your monster team.
+"projectCryo" is a creature-collection RPG featuring a **hybrid 2D/3D architecture**. Exploration takes place in a cozy **Stardew Valley-inspired 2D pixel art world**, while combat transitions into **separate 3D tactical environments** inspired by Star Ocean. The core battle logic uses an **Active Tactical Battle System** (FF12 Gambit style).
 
 ## 2. Core Gameplay Loop
 1.  **Explore**: Traverse a cozy, grid-based world (Stardew style) to discover monsters.
 2.  **Program (Gambits)**: Set conditional logic for each of your 3 active monsters.
-3.  **Battle**: Watch your automated tactics play out in real-time-with-pause 3v3 skirmishes.
-4.  **Challenge**: Defeat regional **Gym Leaders** to prove your tactical prowess and unlock new Gambit slots.
+3.  **Battle**: Transition into a separate **3D arena** for real-time-with-pause 3v3 skirmishes.
+4.  **Challenge**: Defeat regional **Gym Leaders** in high-stakes 3D tactical battles.
 5.  **Optimize**: Refine logic chains based on battle performance.
 
 ## 3. Key Mechanic: the Gambit System
@@ -25,9 +22,10 @@
 *   **Speed Stat**: Directly influences ATB bar fill rate.
 
 ### B. Battle System
-*   3v3 automated combat engine.
+*   **3D Arena**: Separate 3D environments for each biome (Oasis, Wilds, Gyms).
+*   3v3 automated combat engine with dynamic camera angles (Star Ocean style).
 *   "Wait" Mode: Battle pauses when a manual command menu is opened.
-*   Visual ATB bars for all 6 combatants.
+*   Visual ATB bars and floating combat text in 3D space.
 
 ### C. World & Exploration
 *   **Aesthetic**: 2D top-down pixel art with seasonal variations and cozy vibes.
@@ -36,10 +34,11 @@
 *   **Combat Route**: The Wilds (Random encounters in "tall grass").
 
 ## 5. Technical Stack (Proposed)
-*   **Engine**: HTML5 Canvas / Javascript / Vite (for fast development and modern bundling).
-*   **Rendering**: PIXI.js or similar for high-performance 2D pixel art.
-*   **Architecture**: Component-based entity system for monster instances.
-*   **State Management**: Centralized store for player inventory and monster stats.
+*   **Engine/Framework**: Vite + Vanilla Javascript.
+*   **2D Rendering (World)**: HTML5 Canvas / PIXI.js (Stardew-style exploration).
+*   **3D Rendering (Battle)**: **Three.js** (Separate battle scene with 3D models/sprites).
+*   **Architecture**: Component-based entity system shared between 2D and 3D states.
+*   **State Management**: Centralized store for player inventory, monster stats, and world position.
 
 ---
 *Drafted by Antigravity on 2026-02-15*
