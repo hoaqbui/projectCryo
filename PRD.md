@@ -1,4 +1,4 @@
-"projectCryo" is a creature-collection RPG. It features a cozy **Stardew Valley-inspired world** and a tactical **Side-View Arena**. The core gameplay revolves around an **Active Tactical Battle (ATB)** system with automated basic actions and manual player-triggered "Ultimates," all rendered in high-quality pixel art.
+"projectCryo" is a creature-collection RPG built in **Unity**. It features a cozy **Stardew Valley-inspired world** (leveraging **The Farming Engine**) and a tactical **Side-View Arena**. The core gameplay revolves around an **Active Tactical Battle (ATB)** system with automated basic actions and manual player-triggered "Ultimates."
 
 ## 2. Core Gameplay Loop
 1.  **Explore**: Traverse a cozy, grid-based world (Stardew style) to discover monsters.
@@ -25,9 +25,14 @@
 *   **Aesthetic**: 2D top-down pixel art with seasonal variations and cozy vibes.
 *   **Follower System**: Up to **3 active monsters** follow the Trainer on the map at all times.
 
-## 5. Technical Stack (TBD)
+## 5. Technical Stack
+*   **Engine**: Unity 2022.3+ (LTS).
+*   **Framework**: **The Farming Engine** (for core world mechanics, inventory, and farming).
 *   **Asset Support**: Time Fantasy 1st OCC Winner Pack & Vol. 2.
-*   **Architecture**: Modular system for ATB and Monster logic.
+*   **Architecture**: Modular C# system with ScriptableObjects for ATB and Monster logic, integrated with The Farming Engine's item/character systems.
+*   **Add-ons**:
+    *   **Dialogue System for Unity**: For branching narrative and NPC interactions.
+    *   **Unity UI Toolkit**: For the tactical battle interface.
 
 ---
 *Drafted by Antigravity on 2026-02-16*

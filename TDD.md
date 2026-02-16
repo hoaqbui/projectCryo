@@ -8,38 +8,35 @@
 Project Cryo is a "Stardew Valley x Pokemon" style RPG. This document outlines the technical architecture for a modular **Active Time Battle (ATB)** system, a universal data schema for creature collection, and a cross-platform deployment strategy.
 
 ## 2. System Architecture
-The project follows a **Component-Based Architecture** ensuring gameplay logic remains separate from rendering and platform-specific code.
+The project follows a **Component-Based Architecture (ECS-Lite pattern)** using Unity's built-in systems, ensuring gameplay logic remains separate from rendering.
 
 ### 2.1 Core Modules
-- **ATB Manager**: Handles real-time combat ticks, action queuing, and speed-based turn order.
-- **Creature Registry**: Manages monster stats, types, passives, and experience curves.
-- **Interaction Engine**: Handles map-based actions like harvesting and pre-emptive strikes.
+- **World Engine**: Based on **The Farming Engine**, handling grid interactions, time, and world state.
+- **ATB Combat System**: A custom C# module that interfaces with the World Engine for battle transitions.
+- **Data Layers**: Leveraging **ScriptableObjects** for all creature and item definitions.
 
-## 3. Data Schema
-Data is stored in engine-agnostic JSON formats.
+## 3. Data Schema (Unity ScriptableObjects)
+All data is stored as `ScriptableObject` assets for easy editing in the Unity Inspector.
 
-### 3.1 Monster Schema
-```json
-{
-  "id": 1,
-  "name": "Glaciara",
-  "type": ["Ice"],
-  "stats": { "hp": 120, "atk": 15, "def": 20, "agi": 45 },
-  "size": 2,
-  "passive": "Frost_Aura",
-  "actions": {
-    "auto": "Ice_Shard",
-    "ultimate": "Blizzard_Storm"
-  }
+### 3.1 CreatureDefinition (ScriptableObject)
+```csharp
+[CreateAssetMenu(fileName = "NewCreature", menuName = "Cryo/Creature")]
+public class CreatureDefinition : ScriptableObject {
+    public string creatureName;
+    public Sprite icon;
+    public ElementType[] types;
+    public BaseStats baseStats;
+    public List<ActionDefinition> autoActions;
+    public ActionDefinition ultimateAction;
 }
 ```
 
 ## 4. Battle System Logic (ATB)
-The combat engine uses a continuous **Tick-Based System**.
+The combat engine uses a continuous **Tick-Based System** updated via Unity's `FixedUpdate` or a custom Tick Manager.
 
 ### 4.1 The ATB Loop
-1.  **Tick Update**: Each active creature increments an internal `atb` counter based on its `agi` (Agility).
-2.  **Gate Check**: When a creature reaches the ATB threshold:
-    *   **Pause**: decision making.
-3.  **Execution**: Animations and damage calculations are processed.
-4.  **Reset**: The acting creature's `atb` is reset, and ticks resume.
+1.  **Tick Update**: Each active creature increments an internal `atb` value based on its `agi`.
+2.  **Gate Check**: When `atb >= Threshold`:
+    *   **State Machine**: Transition to "Decision" state.
+3.  **Execution**: Trigger animations (Mecanim/Spine) and process `BattleEffect` logic.
+4.  **Reset**: Action cooldowns apply, `atb` resets, and ticks resume.
