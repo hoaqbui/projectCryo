@@ -1,38 +1,48 @@
-"projectCryo" is a creature-collection RPG built in **Unity**. It features a cozy **Stardew Valley-inspired world** (leveraging **The Farming Engine**) and a tactical **5x5 Grid-Based Arena**. The core gameplay revolves around an **Automated Tactical SRPG** system where creature actions are driven by speed, positioning, and luck.
+# Product Requirements Document: Project Cryo
+
+## 1. Vision Statement
+**Project Cryo** is a high-fidelity 2D creature-collection RPG built in **Unity**. It combines the cozy, grid-based world-building of *Stardew Valley* with a tactical **5x5 Grid-Based Auto-Battler**.
+
+> [!NOTE]
+> The project emphasizes modularity and engine-native systems, leveraging **The Farming Engine** for world mechanics and a custom **Tactical SRPG** framework for combat.
 
 ## 2. Core Gameplay Loop
-1.  **Explore**: Traverse a cozy, grid-based world (Stardew style) to discover monsters.
-2.  **Prepare**: Manage your team of up to 3 active monsters and their equipment.
-3.  **Battle**: Transition into a separate **5x5 tactical grid** for automated 3v3 skirmishes.
-4.  **Challenge**: Defeat regional **Gym Leaders** in high-stakes 2D tactical battles.
-5.  **Optimize**: Refine logic chains based on battle performance.
+1.  **Explore**: Traverse a cozy, grid-based world to discover and interact with wild **Creatures**.
+2.  **Prepare**: Manage a team of up to **3 active creatures** and optimize their equipment.
+3.  **Battle**: Transition into tactical 3v3 automated skirmishes on a 5x5 grid.
+4.  **Challenge**: Defeat regional **Gym Leaders** in high-stakes tactical encounters.
+5.  **Optimize**: Refine creature builds and equipment based on battle performance.
 
 ## 3. Key Mechanic: Grid-Based Battle System
-*   **3v3 On-Field**: Three monsters per side are active on a **5x5 grid**.
-*   **Move & Action Economy**: Each monster has **2 Moves** (1 step per move) and **2 Actions** per turn.
-*   **Speed-Driven Order**: Turn order is determined dynamically by the **Speed (agi)** stat.
-*   **Automated Combat with Luck Bias**: The entire battle is automated, with a **Luck** stat providing a probabilistic bias to decision-making, accuracy, and critical hits (implementing a 'weighted decision' AI).
+The combat system is a **Speed-Driven Automated SRPG**.
+
+*   **Grid Layout**: All battles take place on a **5x5 square grid**.
+*   **Move & Action Economy**: Each creature has **2 Moves** (1 tile per move) and **2 Actions** (Attack/Ability) per turn.
+*   **Speed-Driven Order**: Turn order is calculated dynamically based on the **Speed (AGI)** stat.
+*   **Automated Intelligence**: Battles are fully automated. AI decision-making for moves and actions is weighted by the **Luck (LUK)** stat.
+*   **Ultimates**: Each creature possesses a unique **Ultimate Ability** triggered automatically when its energy meter is full.
 
 ## 4. MVP Feature Set
-### A. Monster System
-*   **Total Monsters**: 20 unique monsters for MVP.
+
+### A. Creature System
+*   **Total Creatures**: 20 unique designs for MVP (refer to [creature_roster.md](./creature_roster.md)).
 *   **Ability Structure**:
-    - **Auto-Attack**: Standard automated action.
-    - **Passive**: Persistent effect or stat boost.
-    - **Ultimate**: High-impact ability triggered automatically based on meter/conditions (influenced by Luck).
-*   **Equipment**: Each monster can equip exactly one item.
+    *   **Auto-Attack**: Standard automated action.
+    *   **Passive**: Persistent effect or stat boost.
+    *   **Ultimate**: High-impact ability with specific trigger conditions.
+*   **Equipment**: Each creature can equip exactly one item to modify stats or behaviors.
 
 ### B. World & Exploration
-*   **Aesthetic**: 2D top-down pixel art with seasonal variations and cozy vibes.
-*   **Follower System**: Up to **3 active monsters** follow the Trainer on the map at all times.
+*   **Aesthetic**: 2D top-down pixel art with seasonal variations.
+*   **Follower System**: Up to **3 active creatures** follow the player sprite on the map.
+*   **Integration**: Seamless transition between gathering/farming and tactical combat.
 
 ## 5. Technical Stack
-*   **Engine**: Unity 2022.3+ (LTS).
-*   **Framework**: **The Farming Engine** (World/Farming) + **Turn-Based Strategy Framework** (Tactical Grid).
-*   **Add-ons**:
-    *   **Dialogue System for Unity**: For branching narrative and NPC interactions.
-    *   **Unity UI Toolkit**: For the tactical battle interface.
-    *   **ORK Framework 3** (Optional): For deeper RPG systems integration.
+*   **Core Engine**: Unity 2022.3+ (LTS).
+*   **World Framework**: **The Farming Engine** (Inventories, Time, Interactions).
+*   **Combat Framework**: **Turn-Based Strategy Framework** (Grid, Pathfinding).
+*   **Data Management**: ScriptableObjects for all Creature and Ability definitions.
+*   **UI System**: Unity UI Toolkit for high-performance tactical overlays.
 
 ---
-*Drafted by Antigravity on 2026-02-16*
+*Last Updated: 2026-02-16*

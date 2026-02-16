@@ -1,54 +1,78 @@
 # Technical Design Document: Project Cryo
 
-**Version:** 2.0 (Pivot)
+**Status:** Finalized (Unity Tactical Pivot)  
 **Date:** 2026-02-16
-**Status:** Draft
 
 ## 1. Executive Summary
-Project Cryo is a "Stardew Valley x Pokemon" style RPG. This document outlines the technical architecture for a modular **Active Time Battle (ATB)** system, a universal data schema for creature collection, and a cross-platform deployment strategy.
+Project Cryo is a modular 2D RPG merging creature collection with tactical grid-based combat. This document outlines the technical architecture for the **Automated Tactical SRPG** system, leveraging Unity's ScriptableObject pattern and The Farming Engine's world state management.
 
 ## 2. System Architecture
-The project follows a **Component-Based Architecture (ECS-Lite pattern)** using Unity's built-in systems, ensuring gameplay logic remains separate from rendering.
+The project follows a **Modular Component Architecture**, ensuring a clean separation between World exploration (The Farming Engine) and Tactical Combat (Custom SRPG Engine).
 
 ### 2.1 Core Modules
-- **World Engine**: Based on **The Farming Engine**, handling grid interactions, time, and world state.
-    - *Action RPG Elements*: Leverages TFE's built-in combat, HP/Energy attributes, and XP leveling system.
-    - *Follower/Pet System*: Utilizes TFE's pet behaviors (Follow, Attack, Dig) for the creature exploration phase.
-- **Tactical Grid Engine**: Custom C# or **Turn-Based Strategy Framework** (Crooked Head), managing the **5x5 battle grid**, creature positioning, and pathfinding.
-- **Auto-Combat Controller**: Handles automated decision-making. Uses a **Weighted Random Selection** for actions, where weights are modified by the **Luck (LUK)** stat.
-- **Data Layers**: Leveraging **ScriptableObjects** for all creature and item definitions.
+*   **World Engine (TFE)**: Handles top-down movement, farming, and data persistence.
+*   **Tactical Grid Manager**: Manages the 5x5 battle arena, tile highlighting, and creature placement.
+*   **Auto-Combat Controller**: A C# logic layer that drives automated creature turns using a weighted decision AI.
+*   **Ultimate Meter System**: Tracks energy accumulation per creature and triggers Ultimate visual effects and logic.
 
-## 3. Data Schema (Unity ScriptableObjects)
-All data is stored as `ScriptableObject` assets for easy editing in the Unity Inspector.
+## 3. Data Schema: ScriptableObjects
+All static game data is managed via Unity's `ScriptableObject` system for designer-friendly iteration.
 
-### 3.1 CreatureDefinition (ScriptableObject)
+### 3.1 CreatureDefinition
 ```csharp
 [CreateAssetMenu(fileName = "NewCreature", menuName = "Cryo/Creature")]
 public class CreatureDefinition : ScriptableObject {
     public string creatureName;
-    public Sprite icon;
+    public Sprite artwork;
     public ElementType[] types;
-    public BaseStats baseStats; // Features HP, ATK, DEF, AGI (Speed), and LUK (Luck)
-    public List<ActionDefinition> autoActions; 
+    
+    // Base Stats
+    public int baseHP;
+    public int baseATK;
+    public int baseDEF;
+    public int baseAGI; // Speed (determines turn order)
+    public int baseLUK; // Luck (biases AI and Crits)
+    
+    public List<ActionDefinition> autoActions;
     public ActionDefinition ultimateAction;
 }
 ```
 
-## 4. Battle System Logic (Tactical SRPG)
-The combat engine is a **Grid-Based, Speed-Driven Auto-Battler**.
+## 4. Tactical Combat Logic
 
 ### 4.1 Turn Economy
-- **Moves**: 2 moves per turn (1 tile per move).
-- **Actions**: 2 actions per turn (Attack, Defend, Wait, or Ultimate).
-- **Luck Bias Logic**:
-    - **Crit Rate**: `CriticalChance = 5% + (LUK / 2)%`.
-    - **Accuracy Nudge**: If an attack misses, a secondary check `Random(0, 100) < LUK / 4` can force a hit.
-    - **AI Weighting**: Potential actions are scored; higher LUK adds a bonus `Score * (1 + LUK/200)` to "high-value" actions (like kills or major heals).
-- **Ultimate Trigger**: Energy accumulates per action/move. LUK adds a small `(LUK/10)%` chance to double the energy gain per turn.
+*   **Move Phase**: 2 moves per turn (1 tile per move).
+*   **Action Phase**: 2 actions per turn (Standard Attack, Skill, or Ultimate).
 
-### 4.2 The Combat Loop
-1.  **Turn Sorting**: All 6 active creatures (3 player + 3 enemy) are sorted by `agi` (Speed).
-2.  **Order Execution**:
-    *   **Move Phase**: Active creature moves up to 2 steps toward target (biased by Luck/AI).
-    *   **Action Phase**: Active creature performs up to 2 actions.
-3.  **Round Completion**: Once all creatures have acted, re-evaluate Speed (for buffs/debuffs) and begin next Round.
+### 4.2 The Luck Bias (AI & Crits)
+The **Luck (LUK)** stat is the primary variable for procedural combat "flavor."
+1.  **Critical Chance**: `5% + (LUK / 2)%`. Maxes at 55% for 100 LUK.
+2.  **Accuracy Nudge**: On a miss, a unit rolls `Random(0, 100) < LUK / 4`. Success converts the miss to a "Lucky Hit."
+3.  **Weighted AI Decision**:
+    *   Actions are ranked with a Base Score.
+    *   High-impact actions (e.g., executing a low-HP enemy) receive a bonus: `FinalScore = BaseScore * (1 + LUK/200)`.
+
+### 4.3 Combat Loop Flow
+```mermaid
+graph TD
+    A[Start Round] --> B[Sort Units by AGI]
+    B --> C{Active Unit turn?}
+    C --> D[Move Phase: 2 Steps]
+    D --> E[Action Phase: 2 Slots]
+    E --> F{Ultimate Ready?}
+    F -- Yes --> G[High-Weight Ultimate]
+    F -- No --> H[Weighted Action Decision]
+    G --> I[Execute Action]
+    H --> I[Execute Action]
+    I --> J{More Units?}
+    J -- Yes --> C
+    J -- No --> A
+```
+
+## 5. Implementation Strategy
+*   **World**: Inherit from `TheFarmingEngine.PlayerCharacter` for map movement.
+*   **Transition**: Use a `BattleManager` singleton to freeze the world state and instantiate the tactical grid.
+*   **UI**: Leverage **UI Toolkit** for the action queue display and damage numbers.
+
+---
+*Technical Lead: Antigravity*
