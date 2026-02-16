@@ -37,6 +37,8 @@ public class CreatureDefinition : ScriptableObject {
     
     public List<ActionDefinition> autoActions;
     public ActionDefinition ultimateAction;
+    public PassiveDefinition passiveEffect;
+    public ReactionDefinition reactionAbility;
 }
 ```
 

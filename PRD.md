@@ -27,9 +27,10 @@ The combat system is a **Speed-Driven Automated SRPG**.
 ### A. Creature System
 *   **Total Creatures**: 20 unique designs for MVP (refer to [creature_roster.md](./creature_roster.md)).
 *   **Ability Structure**:
-    *   **Auto-Attack**: Standard automated action.
-    *   **Passive**: Persistent effect or stat boost.
-    *   **Ultimate**: High-impact ability with specific trigger conditions.
+      - **Auto-Attack**: Standard automated action.
+    - **Passive**: Persistent unique effect or stat boost.
+    - **Reaction**: A unique ability triggered when specific conditions are met (e.g., taking damage, ally falling).
+    - **Ultimate**: High-impact ability triggered automatically based on meter.
 *   **Equipment**: Each creature can equip exactly one item to modify stats or behaviors.
 
 ### B. World & Exploration
