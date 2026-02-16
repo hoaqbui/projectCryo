@@ -30,6 +30,8 @@ public class CreatureDefinition : ScriptableObject {
     public int baseHP;
     public int baseATK;
     public int baseDEF;
+    public int baseMAG; // Magic Attack
+    public int baseMDEF; // Magic Defense
     public int baseAGI; // Speed (determines turn order)
     public int baseLUK; // Luck (biases AI and Crits)
     
