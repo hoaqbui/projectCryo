@@ -1,5 +1,7 @@
+# projectCryo (Mon-Tactics)
+
 ## 1. Project Overview
-"Mon-Tactics" is a creature-collection RPG featuring a **3v3 Active Tactical Battle System** inspired by the FF12 Gambit system, presented in a cozy **Stardew Valley-inspired pixel art style**. The goal is to provide a charming world to explore while offering deep tactical "programming" for your monster team.
+"projectCryo" is a creature-collection RPG featuring a **3v3 Active Tactical Battle System** inspired by the FF12 Gambit system, presented in a cozy **Stardew Valley-inspired pixel art style**. The goal is to provide a charming world to explore while offering deep tactical "programming" for your monster team.
 
 ## 2. Core Gameplay Loop
 1.  **Explore**: Traverse a cozy, grid-based world (Stardew style) to discover monsters.
