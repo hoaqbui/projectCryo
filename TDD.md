@@ -30,6 +30,7 @@ public class CreatureDefinition : ScriptableObject {
     public ElementType[] types;
     public BaseStats baseStats; // Features HP, ATK, DEF, AGI (Speed), and LUK (Luck)
     public List<ActionDefinition> autoActions; 
+    public ActionDefinition ultimateAction;
 }
 ```
 
@@ -38,8 +39,9 @@ The combat engine is a **Grid-Based, Speed-Driven Auto-Battler**.
 
 ### 4.1 Turn Economy
 - **Moves**: 2 moves per turn (1 tile per move).
-- **Actions**: 2 actions per turn (Attack, Defend, Wait).
-- **Automated AI**: Decision-making weights are biased by the **Luck** stat (e.g., higher luck increases the chance to prioritize high-damage actions or successful evasions).
+- **Actions**: 2 actions per turn (Attack, Defend, Wait, or Ultimate).
+- **Ultimate Trigger**: A separate energy/meter system where the **Luck** stat influences how quickly the meter fills or the probability of the AI selecting the Ultimate when available.
+- **Automated AI**: Decision-making weights are biased by the **Luck** stat.
 
 ### 4.2 The Combat Loop
 1.  **Turn Sorting**: All 6 active creatures (3 player + 3 enemy) are sorted by `agi` (Speed).

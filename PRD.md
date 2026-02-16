@@ -17,9 +17,9 @@
 ### A. Monster System
 *   **Total Monsters**: 20 unique monsters for MVP.
 *   **Ability Structure**:
-    - **Auto-Attack**: Always active, fires based on speed/Gambits.
-    - **Passive**: Always active, provides stat boosts or unique effects.
-    - **Manual Ultimate**: High-impact ability manual triggered by the player.
+    - **Auto-Attack**: Standard automated action.
+    - **Passive**: Persistent effect or stat boost.
+    - **Ultimate**: High-impact ability triggered automatically based on meter/conditions (influenced by Luck).
 *   **Equipment**: Each monster can equip exactly one item.
 
 ### B. World & Exploration
