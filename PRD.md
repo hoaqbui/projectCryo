@@ -11,7 +11,7 @@
 *   **3v3 On-Field**: Three monsters per side are active on a **5x5 grid**.
 *   **Move & Action Economy**: Each monster has **2 Moves** (1 step per move) and **2 Actions** per turn.
 *   **Speed-Driven Order**: Turn order is determined dynamically by the **Speed (agi)** stat.
-*   **Automated Combat with Luck Bias**: The entire battle is automated, with a **Luck** stat providing a probabilistic bias to decision-making and accuracy/criticals.
+*   **Automated Combat with Luck Bias**: The entire battle is automated, with a **Luck** stat providing a probabilistic bias to decision-making, accuracy, and critical hits (implementing a 'weighted decision' AI).
 
 ## 4. MVP Feature Set
 ### A. Monster System
@@ -28,12 +28,11 @@
 
 ## 5. Technical Stack
 *   **Engine**: Unity 2022.3+ (LTS).
-*   **Framework**: **The Farming Engine** (for core world mechanics, inventory, and farming).
-*   **Asset Support**: Time Fantasy 1st OCC Winner Pack & Vol. 2.
-*   **Architecture**: Modular C# system with ScriptableObjects for Creature and Combat logic, integrated with The Farming Engine's item/character systems.
+*   **Framework**: **The Farming Engine** (World/Farming) + **Turn-Based Strategy Framework** (Tactical Grid).
 *   **Add-ons**:
     *   **Dialogue System for Unity**: For branching narrative and NPC interactions.
     *   **Unity UI Toolkit**: For the tactical battle interface.
+    *   **ORK Framework 3** (Optional): For deeper RPG systems integration.
 
 ---
 *Drafted by Antigravity on 2026-02-16*

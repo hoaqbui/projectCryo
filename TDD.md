@@ -14,8 +14,8 @@ The project follows a **Component-Based Architecture (ECS-Lite pattern)** using 
 - **World Engine**: Based on **The Farming Engine**, handling grid interactions, time, and world state.
     - *Action RPG Elements*: Leverages TFE's built-in combat, HP/Energy attributes, and XP leveling system.
     - *Follower/Pet System*: Utilizes TFE's pet behaviors (Follow, Attack, Dig) for the creature exploration phase.
-- **Tactical Grid Engine**: A custom C# module managing the **5x5 battle grid**, creature positioning, and pathfinding.
-- **Auto-Combat Controller**: Handles automated decision-making for creatures based on Speed, remaining Actions/Moves, and Luck bias.
+- **Tactical Grid Engine**: Custom C# or **Turn-Based Strategy Framework** (Crooked Head), managing the **5x5 battle grid**, creature positioning, and pathfinding.
+- **Auto-Combat Controller**: Handles automated decision-making. Uses a **Weighted Random Selection** for actions, where weights are modified by the **Luck (LUK)** stat.
 - **Data Layers**: Leveraging **ScriptableObjects** for all creature and item definitions.
 
 ## 3. Data Schema (Unity ScriptableObjects)
@@ -40,8 +40,11 @@ The combat engine is a **Grid-Based, Speed-Driven Auto-Battler**.
 ### 4.1 Turn Economy
 - **Moves**: 2 moves per turn (1 tile per move).
 - **Actions**: 2 actions per turn (Attack, Defend, Wait, or Ultimate).
-- **Ultimate Trigger**: A separate energy/meter system where the **Luck** stat influences how quickly the meter fills or the probability of the AI selecting the Ultimate when available.
-- **Automated AI**: Decision-making weights are biased by the **Luck** stat.
+- **Luck Bias Logic**:
+    - **Crit Rate**: `CriticalChance = 5% + (LUK / 2)%`.
+    - **Accuracy Nudge**: If an attack misses, a secondary check `Random(0, 100) < LUK / 4` can force a hit.
+    - **AI Weighting**: Potential actions are scored; higher LUK adds a bonus `Score * (1 + LUK/200)` to "high-value" actions (like kills or major heals).
+- **Ultimate Trigger**: Energy accumulates per action/move. LUK adds a small `(LUK/10)%` chance to double the energy gain per turn.
 
 ### 4.2 The Combat Loop
 1.  **Turn Sorting**: All 6 active creatures (3 player + 3 enemy) are sorted by `agi` (Speed).
