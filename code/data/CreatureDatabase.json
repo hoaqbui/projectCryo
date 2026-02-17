@@ -1,0 +1,572 @@
+{
+    "project": "Project Cryo",
+    "version": "1.0.0",
+    "last_updated": "2026-02-16",
+    "creatures": [
+        {
+            "id": "CR-001",
+            "name": "Glimmer-Bat",
+            "internal_name": "GlimmerBat",
+            "type": "Air",
+            "role": "Scout",
+            "stats": {
+                "hp": 45,
+                "atk": 30,
+                "def": 20,
+                "mag": 50,
+                "mdef": 40,
+                "agi": 85,
+                "luk": 40
+            },
+            "abilities": {
+                "action": "Sonic Pulse",
+                "passive": {
+                    "name": "Sonar",
+                    "description": "Never misses."
+                },
+                "reaction": {
+                    "name": "Flutter",
+                    "description": "Buffs AGI when hit."
+                },
+                "ultimate": "Blindwave"
+            }
+        },
+        {
+            "id": "CR-002",
+            "name": "Slag-Slime",
+            "internal_name": "SlagSlime",
+            "type": "Fire",
+            "role": "Tank",
+            "stats": {
+                "hp": 120,
+                "atk": 25,
+                "def": 60,
+                "mag": 40,
+                "mdef": 50,
+                "agi": 20,
+                "luk": 25
+            },
+            "abilities": {
+                "action": "Magma Spit",
+                "passive": {
+                    "name": "Molten",
+                    "description": "Reflects physical."
+                },
+                "reaction": {
+                    "name": "Splatter",
+                    "description": "Slows attacker."
+                },
+                "ultimate": "Eruption"
+            }
+        },
+        {
+            "id": "CR-003",
+            "name": "Frost-Wolf",
+            "internal_name": "FrostWolf",
+            "type": "Ice",
+            "role": "Attacker",
+            "stats": {
+                "hp": 75,
+                "atk": 55,
+                "def": 35,
+                "mag": 40,
+                "mdef": 30,
+                "agi": 70,
+                "luk": 30
+            },
+            "abilities": {
+                "action": "Chill Bite",
+                "passive": {
+                    "name": "Pack Hunt",
+                    "description": "+ATK near ally."
+                },
+                "reaction": {
+                    "name": "Frostbite",
+                    "description": "Chills on contact."
+                },
+                "ultimate": "Winter Howl"
+            }
+        },
+        {
+            "id": "CR-004",
+            "name": "Mud-Golem",
+            "internal_name": "MudGolem",
+            "type": "Earth",
+            "role": "Tank",
+            "stats": {
+                "hp": 150,
+                "atk": 40,
+                "def": 80,
+                "mag": 10,
+                "mdef": 20,
+                "agi": 15,
+                "luk": 10
+            },
+            "abilities": {
+                "action": "Rock Throw",
+                "passive": {
+                    "name": "Unstoppable",
+                    "description": "Immune to CC."
+                },
+                "reaction": {
+                    "name": "Harden",
+                    "description": "+DEF when hit."
+                },
+                "ultimate": "Earthwall"
+            }
+        },
+        {
+            "id": "CR-005",
+            "name": "Spark-Cat",
+            "internal_name": "SparkCat",
+            "type": "Elect",
+            "role": "Assassin",
+            "stats": {
+                "hp": 50,
+                "atk": 75,
+                "def": 25,
+                "mag": 60,
+                "mdef": 30,
+                "agi": 90,
+                "luk": 50
+            },
+            "abilities": {
+                "action": "Zap Leap",
+                "passive": {
+                    "name": "Static",
+                    "description": "+Crit on move."
+                },
+                "reaction": {
+                    "name": "Zap",
+                    "description": "Minor damage to hitter."
+                },
+                "ultimate": "Thunder Rain"
+            }
+        },
+        {
+            "id": "CR-006",
+            "name": "Vine-Snake",
+            "internal_name": "VineSnake",
+            "type": "Grass",
+            "role": "CC",
+            "stats": {
+                "hp": 65,
+                "atk": 35,
+                "def": 45,
+                "mag": 55,
+                "mdef": 50,
+                "agi": 55,
+                "luk": 20
+            },
+            "abilities": {
+                "action": "Entangle",
+                "passive": {
+                    "name": "Regrow",
+                    "description": "Heals 5% per turn."
+                },
+                "reaction": {
+                    "name": "Thorny",
+                    "description": "Bleeds attacker."
+                },
+                "ultimate": "Bloom Stun"
+            }
+        },
+        {
+            "id": "CR-007",
+            "name": "Iron-Knave",
+            "internal_name": "IronKnave",
+            "type": "Steel",
+            "role": "Balanced",
+            "stats": {
+                "hp": 90,
+                "atk": 50,
+                "def": 65,
+                "mag": 30,
+                "mdef": 45,
+                "agi": 45,
+                "luk": 15
+            },
+            "abilities": {
+                "action": "Heavy Strike",
+                "passive": {
+                    "name": "Chivalry",
+                    "description": "Protects low-HP."
+                },
+                "reaction": {
+                    "name": "Block",
+                    "description": "25% dmg reduction."
+                },
+                "ultimate": "Fortress"
+            }
+        },
+        {
+            "id": "CR-008",
+            "name": "Ember-Sprite",
+            "internal_name": "EmberSprite",
+            "type": "Fire",
+            "role": "Mage",
+            "stats": {
+                "hp": 40,
+                "atk": 20,
+                "def": 20,
+                "mag": 85,
+                "mdef": 65,
+                "agi": 60,
+                "luk": 60
+            },
+            "abilities": {
+                "action": "Fireball",
+                "passive": {
+                    "name": "Fanned Flame",
+                    "description": "+MAG on kill."
+                },
+                "reaction": {
+                    "name": "Heat up",
+                    "description": "Buffs MAG when hit."
+                },
+                "ultimate": "Supernova"
+            }
+        },
+        {
+            "id": "CR-009",
+            "name": "Wave-Ray",
+            "internal_name": "WaveRay",
+            "type": "Water",
+            "role": "Balanced",
+            "stats": {
+                "hp": 80,
+                "atk": 45,
+                "def": 50,
+                "mag": 55,
+                "mdef": 55,
+                "agi": 65,
+                "luk": 35
+            },
+            "abilities": {
+                "action": "Water Jet",
+                "passive": {
+                    "name": "Fluid",
+                    "description": "Moves +1 tile."
+                },
+                "reaction": {
+                    "name": "Wash",
+                    "description": "Cleanses debuffs."
+                },
+                "ultimate": "Tidal Surge"
+            }
+        },
+        {
+            "id": "CR-010",
+            "name": "Static-Rat",
+            "internal_name": "StaticRat",
+            "type": "Elect",
+            "role": "Swarm",
+            "stats": {
+                "hp": 35,
+                "atk": 40,
+                "def": 15,
+                "mag": 30,
+                "mdef": 10,
+                "agi": 80,
+                "luk": 10
+            },
+            "abilities": {
+                "action": "Nibble",
+                "passive": {
+                    "name": "Horde",
+                    "description": "+AGI per active ally."
+                },
+                "reaction": {
+                    "name": "Scurry",
+                    "description": "Moves 1 tile away."
+                },
+                "ultimate": "Overcharge"
+            }
+        },
+        {
+            "id": "CR-011",
+            "name": "Pebble-Spirit",
+            "internal_name": "PebbleSpirit",
+            "type": "Earth",
+            "role": "Scout",
+            "stats": {
+                "hp": 55,
+                "atk": 25,
+                "def": 40,
+                "mag": 20,
+                "mdef": 30,
+                "agi": 40,
+                "luk": 80
+            },
+            "abilities": {
+                "action": "Dust Cloud",
+                "passive": {
+                    "name": "Lucky Find",
+                    "description": "+1 Action slot."
+                },
+                "reaction": {
+                    "name": "Dust Cloud",
+                    "description": "Blinds hitter."
+                },
+                "ultimate": "Quake Pulse"
+            }
+        },
+        {
+            "id": "CR-012",
+            "name": "Mist-Weaver",
+            "internal_name": "MistWeaver",
+            "type": "Air",
+            "role": "Support",
+            "stats": {
+                "hp": 70,
+                "atk": 35,
+                "def": 30,
+                "mag": 70,
+                "mdef": 75,
+                "agi": 75,
+                "luk": 45
+            },
+            "abilities": {
+                "action": "Healing Mist",
+                "passive": {
+                    "name": "Soothing",
+                    "description": "Allies heal +10%."
+                },
+                "reaction": {
+                    "name": "Vanish",
+                    "description": "Goes invulnerable."
+                },
+                "ultimate": "Wind Shield"
+            }
+        },
+        {
+            "id": "CR-013",
+            "name": "Ghost-Flambé",
+            "internal_name": "GhostFlambe",
+            "type": "Ghost",
+            "role": "Debuff",
+            "stats": {
+                "hp": 60,
+                "atk": 20,
+                "def": 40,
+                "mag": 75,
+                "mdef": 80,
+                "agi": 50,
+                "luk": 70
+            },
+            "abilities": {
+                "action": "Spooky Burn",
+                "passive": {
+                    "name": "Haunt",
+                    "description": "Lowers enemy LUK."
+                },
+                "reaction": {
+                    "name": "Phase",
+                    "description": "30% miss chance."
+                },
+                "ultimate": "Nightmare"
+            }
+        },
+        {
+            "id": "CR-014",
+            "name": "Deep-Claw",
+            "internal_name": "DeepClaw",
+            "type": "Water",
+            "role": "Attacker",
+            "stats": {
+                "hp": 100,
+                "atk": 65,
+                "def": 55,
+                "mag": 25,
+                "mdef": 30,
+                "agi": 40,
+                "luk": 25
+            },
+            "abilities": {
+                "action": "Crab Crush",
+                "passive": {
+                    "name": "Crush",
+                    "description": "Ignores 20% DEF."
+                },
+                "reaction": {
+                    "name": "Pincers",
+                    "description": "Roots the target."
+                },
+                "ultimate": "Barrier Snap"
+            }
+        },
+        {
+            "id": "CR-015",
+            "name": "Sun-Lizard",
+            "internal_name": "SunLizard",
+            "type": "Fire",
+            "role": "Balanced",
+            "stats": {
+                "hp": 85,
+                "atk": 55,
+                "def": 45,
+                "mag": 45,
+                "mdef": 40,
+                "agi": 55,
+                "luk": 55
+            },
+            "abilities": {
+                "action": "Flare Sneeze",
+                "passive": {
+                    "name": "Solar",
+                    "description": "Meter fills faster."
+                },
+                "reaction": {
+                    "name": "Flash",
+                    "description": "Lowers hit accuracy."
+                },
+                "ultimate": "Sol Ray"
+            }
+        },
+        {
+            "id": "CR-016",
+            "name": "Bramble-Boar",
+            "internal_name": "BrambleBoar",
+            "type": "Grass",
+            "role": "Bruiser",
+            "stats": {
+                "hp": 110,
+                "atk": 60,
+                "def": 50,
+                "mag": 20,
+                "mdef": 25,
+                "agi": 35,
+                "luk": 15
+            },
+            "abilities": {
+                "action": "Gore",
+                "passive": {
+                    "name": "Fury",
+                    "description": "+ATK on losing HP."
+                },
+                "reaction": {
+                    "name": "Rebound",
+                    "description": "Small knockback."
+                },
+                "ultimate": "Thorn Patch"
+            }
+        },
+        {
+            "id": "CR-017",
+            "name": "Drift-Jelly",
+            "internal_name": "DriftJelly",
+            "type": "Ice",
+            "role": "CC",
+            "stats": {
+                "hp": 70,
+                "atk": 30,
+                "def": 60,
+                "mag": 65,
+                "mdef": 70,
+                "agi": 30,
+                "luk": 45
+            },
+            "abilities": {
+                "action": "Numbing Touch",
+                "passive": {
+                    "name": "Gelatin",
+                    "description": "-20% phys dmg."
+                },
+                "reaction": {
+                    "name": "Nudge",
+                    "description": "Swaps pos with unit."
+                },
+                "ultimate": "Absolute Zero"
+            }
+        },
+        {
+            "id": "CR-018",
+            "name": "Shadow-Stalker",
+            "internal_name": "ShadowStalker",
+            "type": "Dark",
+            "role": "Assassin",
+            "stats": {
+                "hp": 45,
+                "atk": 85,
+                "def": 15,
+                "mag": 40,
+                "mdef": 20,
+                "agi": 95,
+                "luk": 30
+            },
+            "abilities": {
+                "action": "Backstab",
+                "passive": {
+                    "name": "Backstab",
+                    "description": "+Crit from rear."
+                },
+                "reaction": {
+                    "name": "Smoke",
+                    "description": "Teleports to safety."
+                },
+                "ultimate": "Void Strike"
+            }
+        },
+        {
+            "id": "CR-019",
+            "name": "Light-Construct",
+            "internal_name": "LightConstruct",
+            "type": "Light",
+            "role": "Balanced",
+            "stats": {
+                "hp": 80,
+                "atk": 60,
+                "def": 45,
+                "mag": 65,
+                "mdef": 65,
+                "agi": 50,
+                "luk": 50
+            },
+            "abilities": {
+                "action": "Prism Beam",
+                "passive": {
+                    "name": "Purity",
+                    "description": "Immune to debuffs."
+                },
+                "reaction": {
+                    "name": "Shield",
+                    "description": "Gives 50 HP bubble."
+                },
+                "ultimate": "Holy Nova"
+            }
+        },
+        {
+            "id": "CR-020",
+            "name": "Ancient-Sentinal",
+            "internal_name": "AncientSentinal",
+            "type": "Steel",
+            "role": "Boss/Tank",
+            "stats": {
+                "hp": 250,
+                "atk": 90,
+                "def": 120,
+                "mag": 80,
+                "mdef": 100,
+                "agi": 10,
+                "luk": 100
+            },
+            "abilities": {
+                "action": "Beam Lock",
+                "passive": {
+                    "name": "Eternal",
+                    "description": "Revives with 1 HP."
+                },
+                "reaction": {
+                    "name": "Stare",
+                    "description": "Petrifies attacker."
+                },
+                "ultimate": "Judgement"
+            }
+        }
+    ],
+    "tunables": {
+        "moves_per_turn": 2,
+        "actions_per_turn": 2,
+        "luck_threshold": 50
+    }
+}
