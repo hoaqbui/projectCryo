@@ -1,4 +1,4 @@
-# Project Cryo (Mobile SRPG)
+# Project Cryo (Mobile SRPG Workspace)
 
 This repository is organized into focused directories:
 

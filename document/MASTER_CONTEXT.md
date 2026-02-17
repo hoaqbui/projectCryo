@@ -1,6 +1,6 @@
 # Project Cryo: Master Context & AI Reinforcement
 
-This document is the **primary context anchor** for any AI assistant working on Project Cryo. It summarizes the core strategic pivots and architectural decisions to ensure continuity across sessions.
+This document is the **primary context anchor** for any AI assistant working on the **Project Cryo** workspace. It summarizes the core strategic pivots and architectural decisions to ensure continuity across sessions focused strictly on Project Cryo and its associated directories.
 
 ## 1. Strategic Core (The "Source of Truth")
 *   **The Master Pillar**: The [DesignStrategy.md](./DesignStrategy.md) is the absolute authority. Gameplay integrity (Ogre-Unicorn style) takes precedence over Art and Tech.
