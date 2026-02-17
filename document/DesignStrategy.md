@@ -24,7 +24,7 @@ Creatures are organized into squads. The **Row placement** (Front, Middle, Back)
 *   **Leader-Driven Stats**: A squad's map speed is determined by the Leader's AGI, while its vision range is determined by the Leader's INT/LUK.
 
 ## 3. MVP Alignment: "Crossroads Encounter"
-The [Crossroads Encounter MVP](file:///c:/Users/hoaqb/OneDrive/Documents/personal_dev/projectCryo/MVP_Spec_Crossroads.md) validates these core pillars in the simplest possible scenario:
+The [Crossroads Encounter MVP](file:///c:/Users/hoaqb/OneDrive/Documents/personal_dev/projectCryo/document/MVP_Spec_Crossroads.md) validates these core pillars in the simplest possible scenario:
 
 *   **Map Pillar**: Tests RTS-style pathfinding and "Intersection Logic" (triggering battle on collision).
 *   **Formation Pillar**: Tests **Row-Based behavior** (e.g., Knight in Front vs. Cleric in Back).

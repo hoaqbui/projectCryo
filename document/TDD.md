@@ -2,7 +2,7 @@
 
 **Status:** Technical Specification v7.1 (Mobile-Only PBR Pivot)  
 **Lead:** Antigravity  
-**Validation:** Crossroads Encounter MVP [[MVP_Spec_Crossroads.md](file:///c:/Users/hoaqb/OneDrive/Documents/personal_dev/projectCryo/MVP_Spec_Crossroads.md)]
+**Validation:** Crossroads Encounter MVP [[MVP_Spec_Crossroads.md](file:///c:/Users/hoaqb/OneDrive/Documents/personal_dev/projectCryo/document/MVP_Spec_Crossroads.md)]
 
 ## 1. Technical Vision (Mobile PBR)
 Project Cryo implements a **Mobile-Only PBR Cel-Shaded architecture** in **Unreal Engine 5**. The architecture is strictly optimized for **Vulkan/ES3.1** mobile APIs, delivering high-fidelity stylized visuals without the overhead of PC-centric lighting (Lumen/RayTracing).

@@ -8,7 +8,7 @@
 Project Cryo is a **Premium Mobile Tactical RPG** built in **Unreal Engine 5**.
 
 > [!IMPORTANT]
-> **The Master Pillar**: The [Master Design Strategy](file:///c:/Users/hoaqb/OneDrive/Documents/personal_dev/projectCryo/DesignStrategy.md) is the absolute primary authority for this project. Gameplay depth and Ogre-style tactical integrity take precedence over all Art and Technical considerations.
+> **The Master Pillar**: The [Master Design Strategy](file:///c:/Users/hoaqb/OneDrive/Documents/personal_dev/projectCryo/document/DesignStrategy.md) is the absolute primary authority for this project. Gameplay depth and Ogre-style tactical integrity take precedence over all Art and Technical considerations.
 
 The goal is to deliver a boutique strategic experience that feels native to mobile, with visuals comparable to the high-performance leaders in the store.
 
@@ -41,7 +41,7 @@ Combat is driven by **Squad Formation**. Characters execute role-specific moves 
 ## 5. Technical Stack
 *   **Engine**: Unreal Engine 5 (Mobile Pipeline).
 *   **Rendering**: Optimized PBR-Toon Materials.
-*   **Logic**: Real-Time Map Subsystem and Skirmish Subsystem.
+*   **Logic**: Real-Time Map Subsystem and Skirmish Subsystem (see [TDD](file:///c:/Users/hoaqb/OneDrive/Documents/personal_dev/projectCryo/document/TDD.md)).
 
 ## 6. MVP Milestone: "Mobile Liberation"
 1.  **Map Command**: Move an optimized squad actor on the 3D map.
