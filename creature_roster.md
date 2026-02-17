@@ -29,3 +29,6 @@ This roster leverages themes from the **Time Fantasy** asset packs. Stats are ba
 *   **Moves**: 2 / turn.
 *   **Actions**: 2 / turn.
 *   **Luck Impact**: High Luck (LUK > 50) increases Reaction trigger success rate (if non-guaranteed).
+
+---
+*Maintained by the Cryo Roster Board*
