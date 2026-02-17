@@ -3,7 +3,7 @@
 This document provides a **single, flat, giant table** view of the **Project Cryo Creature Database**.
 
 > [!IMPORTANT]
-> **Source of Truth**: The definitive data is maintained in [CreatureDatabase.json](file:///c:/Users/hoaqb/OneDrive/Documents/personal_dev/projectCryo/code/data/CreatureDatabase.json).
+> **Source of Truth**: The definitive data is maintained in the [Master Google Sheet](https://docs.google.com/spreadsheets/d/1GHnpPTSgJwWSvFtM2HfuUTs38VQD5HaZI1e4sfENprw/edit?gid=93117081#gid=93117081). Any changes to stats or abilities should be made in the Sheet first, then synced to the [technical JSON source](file:///c:/Users/hoaqb/OneDrive/Documents/personal_dev/projectCryo/code/data/CreatureDatabase.json).
 
 ## Master Flat Roster
 

@@ -5,7 +5,7 @@ This document is the **primary context anchor** for any AI assistant working on 
 ## 1. Strategic Core (The "Source of Truth")
 *   **The Master Pillar**: The [DesignStrategy.md](./DesignStrategy.md) is the absolute authority. Gameplay integrity (Ogre-Unicorn style) takes precedence over Art and Tech.
 *   **Mobile-Only Pivot**: All PC/Console features (Lumen, RayTracing) have been removed. The target is high-end mobile (Vulkan/Metal) and mid-range mobile (ES3.1).
-*   **Data-Driven Roster**: The [CreatureDatabase.json](file:///c:/Users/hoaqb/OneDrive/Documents/personal_dev/projectCryo/code/data/CreatureDatabase.json) is the programmatic source of truth for all unit stats and logic. Documentation in `document/creature_roster.md` is a derived view.
+*   **Data-Driven Roster**: The [Master Google Sheet](https://docs.google.com/spreadsheets/d/1GHnpPTSgJwWSvFtM2HfuUTs38VQD5HaZI1e4sfENprw/edit?gid=93117081#gid=93117081) is the primary authoritative source for all unit stats and logic. The local `protocol/data/CreatureDatabase.json` is a derived technical asset.
 *   **Visual Identity**: PBR Cel-Shaded using **Static GI** and **Cascaded Shadow Maps (CSM)**. No real-time bounce lighting.
 
 ## 2. Technical Architecture
